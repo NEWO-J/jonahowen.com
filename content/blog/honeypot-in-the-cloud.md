@@ -11,22 +11,22 @@ cover:
 It is suprising how much traffic can hit a honeypot in just 24 hours..
 This weekend, I hosted Cowrie inside a AWS LightSail instance with a public IP and exposed SSH service, all logs got forwarded to my Splunk server for analysis.
 
-`9:02:00.000 AM` - **Starting the honeypot**
+## 9:02 AM - Starting the honeypot
 
-`12:31:02.000 PM` - **First Login Attempt (Failure)**
+## 12:31 PM - First Login Attempt (Failure)
 
 At 12:31:02 PM (CDT) A "user" with an IP `134.199.153.119`originating from Alexandria, Australia (DigitalOcean's Australia Data Center) tried to logged in to the honeypot.
 The credentials used? - `pi:raspberry`. These credentials were rejected by Cowrie.
 
 {{< figure src="/images/failedlogin.png" alt="Failed login" width="120%" >}}
  
-`12:31:49.000 PM` - **First Successful Login**
+## 12:31 PM - First Successful Login
 
 At 12:31:49 PM (CDT) Just 47 seconds after the first login attempt, the same IP address tried the credentials `root:1qaz2wsx`. Unlike the first attempt, this login was a success.
 
 {{< figure src="/images/firstlogin.png" alt="First login" width="120%" >}}
 
-`12:31:50.000 PM` - **Recon Begins**
+## 12:31 PM - Recon Begins
 
 Just 1 second after successful login, the bot begins to dig through my host. The command the bot executed was quite long but it tells us a lot.
 {{< figure src="/images/reconbegins.png" alt="Recon begins" width="120%" >}}
