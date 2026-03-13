@@ -1,22 +1,13 @@
 {{- define "main" }}
-<div class="blog-list">
+<div class="blog-grid">
   {{- range .Pages }}
   <a href="{{ .RelPermalink }}" class="blog-card-link">
-    {{- if .Params.cover }}
-    <div class="blog-img-wrap">
+    <div class="blog-card-thumb">
+      {{- if .Params.cover }}
       <img src="{{ .Params.cover.image }}" alt="{{ .Title }}">
-      <div class="blog-card-caption">
-        <span class="blog-card-title">{{ .Title }}</span>
-        <span class="blog-card-date">{{ .Date.Format "January 2, 2006" }}</span>
-      </div>
+      {{- end }}
     </div>
-    {{- else }}
-    <div class="blog-card-text">
-      <span class="blog-card-title">{{ .Title }}</span>
-      {{- with .Description }}<p class="blog-card-desc">{{ . }}</p>{{- end }}
-      <span class="blog-card-date">{{ .Date.Format "January 2, 2006" }}</span>
-    </div>
-    {{- end }}
+    <span class="blog-card-title">{{ .Title }}</span>
   </a>
   {{- end }}
 </div>
