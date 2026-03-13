@@ -28,6 +28,10 @@ At 12:31:02 PM (CDT) A "user" with an IP `134.199.153.119`originating from Alexa
 The credentials used? - `pi:raspberry`. These credentials were rejected by Cowrie.
 
 {{< figure src="/images/failedlogin.png" alt="Failed login" width="120%" >}}
+
+Looking at the IP fraud score for this one, its starting to look malicious.
+
+{{< figure src="/images/ipfraudscore.png" alt="Fraud score" width="120%" >}}
  
 ### 12:31 PM - First Successful Login
 
