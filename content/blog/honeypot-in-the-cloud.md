@@ -1,21 +1,44 @@
----
+<img width="780" height="342" alt="image" src="https://github.com/user-attachments/assets/62205ac8-bd4f-4c4f-90f1-b97a58e31792" />---
 title: "Honeypot In The Cloud"
 layout: "single"
 date: 2025-03-10
 showtoc: false
-description: "Post coming soon."
+description: "Running a Cowrie honeypot hosted in AWS Lightsail with Splunk Connector + Geomap for 24 hours"
 cover:
   image: "/images/honeymap.png"
   alt: "Honeypot In The Cloud"
 ---
-For 24 hours, I ran a honeypot entirely in the cloud.
-It was hosted using Cowrie inside a AWS LightSail instance with a public IP and exposed SSH service, all logs got forwarded to my Splunk server for analysis.
+It is suprising how much traffic can hit a honeypot in just 24 hours..
+This weekend, I hosted Cowrie inside a AWS LightSail instance with a public IP and exposed SSH service, all logs got forwarded to my Splunk server for analysis.
 
-`9:02:00.000 AM` - Starting the honeypot
+`9:02:00.000 AM` - **Starting the honeypot**
 
-`12:35:56.000 PM` - First Login
-At 12:35 PM (CDT) A user with an IP originating from Alexandria, Australia (DigitalOcean's Australia Data Center) successfully logged in to the honeypot.
-The credentials used? - `root:Admin2026!`
-{{< figure src="/images/firstlogin.png" alt="Firstlogin" width="120%" >}}
-The IP itself had some reports of fraud, but not a ton, indicating it may be a relatively new probe.
-{{< figure src="/images/ipfraudscore.png" alt="Fraudscore" width="120%" >}}
+`12:31:02.000 PM` - **First Login Attempt (Failure)**
+
+At 12:31:02 PM (CDT) A "user" with an IP `134.199.153.119`originating from Alexandria, Australia (DigitalOcean's Australia Data Center) tried to logged in to the honeypot.
+The credentials used? - `pi:raspberry`. These credentials were rejected by Cowrie.
+
+{{< figure src="/images/failedlogin.png" alt="Failed login" width="120%" >}}
+ 
+`12:31:49.000 PM` - **First Successful Login**
+
+At 12:31:49 PM (CDT) Just 47 seconds after the first login attempt, the same IP address tried the credentials `root:1qaz2wsx`. Unlike the first attempt, this login was a success.
+
+{{< figure src="/images/firstlogin.png" alt="First login" width="120%" >}}
+
+`12:31:50.000 PM` - **Recon Begins**
+
+Just 1 second after successful login, the bot begins to dig through my host. The command the bot executed was quite long but it tells us a lot.
+{{< figure src="/images/reconbegins.png" alt="Recon begins" width="120%" >}}
+
+Heres a breakdown of what this command does:
+1. Reset the PATH variable
+`export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH`
+2. Collect OS / Kernel Info
+`uname=$(uname -s -v -n -m 2>/dev/null)`
+3. Get CPU Architecture
+`arch=$(uname -m 2>/dev/null)`
+4. Get System Uptime
+`uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1)`
+5. Count CPU Cores
+`cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c "^processor" /proc/cpuinfo 2>/dev/null) | head -1)`
