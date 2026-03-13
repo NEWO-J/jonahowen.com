@@ -1,4 +1,4 @@
-<img width="780" height="342" alt="image" src="https://github.com/user-attachments/assets/62205ac8-bd4f-4c4f-90f1-b97a58e31792" />---
+---
 title: "Honeypot In The Cloud"
 layout: "single"
 date: 2025-03-10
