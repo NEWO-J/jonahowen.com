@@ -2,12 +2,14 @@
 <div class="blog-grid">
   {{- range .Pages }}
   <a href="{{ .RelPermalink }}" class="blog-card-link">
-    <div class="blog-card-thumb">
-      {{- if .Params.cover }}
-      <img src="{{ .Params.cover.image }}" alt="{{ .Title }}">
-      {{- end }}
+    {{- if .Params.cover }}
+    <img src="{{ .Params.cover.image }}" alt="{{ .Title }}">
+    {{- end }}
+    <div class="blog-card-overlay"></div>
+    <div class="blog-card-body">
+      <span class="blog-card-title">{{ .Title }}</span>
+      <span class="blog-card-date">{{ .Date.Format "Jan 2, 2006" }}</span>
     </div>
-    <span class="blog-card-title">{{ .Title }}</span>
   </a>
   {{- end }}
 </div>
