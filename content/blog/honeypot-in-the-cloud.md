@@ -42,3 +42,5 @@ Heres a breakdown of what this command does:
 `uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1)`
 5. Count CPU Cores
 `cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c "^processor" /proc/cpuinfo 2>/dev/null) | head -1)`
+6. Detect CPU Model
+
