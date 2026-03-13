@@ -1,5 +1,5 @@
 ---
-title: "Honeypot In The Cloud"
+title: "$5 Honeypot In The Cloud"
 layout: "single"
 date: 2025-03-10
 showtoc: false
