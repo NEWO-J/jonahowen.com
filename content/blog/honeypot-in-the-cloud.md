@@ -8,5 +8,11 @@ cover:
   image: "/images/honeymap.png"
   alt: "Honeypot In The Cloud"
 ---
+For 24 hours, I ran a honeypot entirely in the cloud.
+It was hosted using Cowrie inside a AWS LightSail instance with a public IP and exposed SSH service, all logs got forwarded to my Splunk server for analysis.
 
-Post coming soon.
+`9:02:00.000 AM` - Starting the honeypot
+
+`12:35:56.000 PM` - First Login
+At 12:35 PM (CDT) A user with an IP originating from Alexandria, Australia (DigitalOcean's Australia Data Center) successfully logged in to the honeypot.
+The credentials used? - `root:Admin2026!`
