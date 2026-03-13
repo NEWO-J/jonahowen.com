@@ -1,4 +1,4 @@
----
+<img width="887" height="572" alt="image" src="https://github.com/user-attachments/assets/49a718bf-d056-48ff-988f-f261900b906e" />---
 title: "$5 Honeypot In The Cloud"
 layout: "single"
 date: 2025-03-10
@@ -11,7 +11,16 @@ cover:
 It is suprising how much traffic can hit a honeypot in just 24 hours..
 This weekend, I hosted Cowrie inside a AWS LightSail instance with a public IP and exposed SSH service, all logs got forwarded to my Splunk server for analysis.
 
-### 9:02 AM - Starting the honeypot
+### 8:27 AM - Starting the honeypot
+
+### 8:59 AM
+at 8:59:17.00 AM CDT, we have first contact! The IP origiates from Mountain View, California, USA.
+
+{{< figure src="/images/FirstProbe.png" alt="First probe" width="120%" >}}
+
+Luckily, this was just Nokia's deepfield internet crawler, so no bad guys yet.
+
+{{< figure src="/images/deepfield.png" alt="deepfield" width="120%" >}}
 
 ### 12:31 PM - First Login Attempt (Failure)
 
