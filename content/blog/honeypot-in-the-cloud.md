@@ -11,9 +11,18 @@ cover:
 It is suprising how much traffic can hit a honeypot in just 24 hours..
 This weekend, I hosted Cowrie inside a AWS LightSail instance with a public IP and exposed SSH service, all logs got forwarded to my Splunk server for analysis.
 
-### How It Works
+### Before We Start
 I've been wanting to get more blue team experience under my belt, so I thought "why not learn with the real deal?" and I set up a honeypot using AWS lightsail connected to Splunk.
-Cost breakdown:
+I initially tried to run the honeypot on a raspberry pi, using Port Forwarding to expose the SSH honeypot on my router, but this proved difficult as the router would perform NAT on the source IPs, rendering IP geolocation and fraud analysis useless. Because AWS lightsail doesnt use NAT for incoming requests, I figured it was more practical for this project.
+
+**Cost breakdown:**
+
+| Component | Approx. Price |
+|---|---|
+| Splunk Enterprise Free Trial | FREE |
+| Cowrie | FREE |
+| AWS Lightsail Ubuntu Instance | $5 | 
+| **Total** | **$5** |
 
 
 ### 8:27 AM - Starting the Honeypot
