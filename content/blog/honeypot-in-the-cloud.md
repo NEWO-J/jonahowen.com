@@ -11,9 +11,9 @@ cover:
 It is suprising how much traffic can hit a honeypot in just 24 hours..
 This weekend, I hosted Cowrie inside a AWS LightSail instance with a public IP and exposed SSH service, all logs got forwarded to my Splunk server for analysis.
 
-### 8:27 AM - Starting the honeypot
+### 8:27 AM - Starting the Honeypot
 
-### 8:59 AM
+### 8:59 AM - First Contact
 at 8:59:17.00 AM CDT, we have first contact! The IP origiates from Mountain View, California, USA.
 
 {{< figure src="/images/FirstProbe.png" alt="First probe" width="120%" >}}
