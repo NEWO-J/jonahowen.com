@@ -2,7 +2,7 @@
 title: "$5 Honeypot In The Cloud"
 layout: "single"
 date: 2025-03-10
-showtoc: false
+showtoc: true
 description: "Running a Cowrie honeypot hosted in AWS Lightsail with Splunk Connector + Geomap for 24 hours"
 cover:
   image: "/images/honeymap.png"
