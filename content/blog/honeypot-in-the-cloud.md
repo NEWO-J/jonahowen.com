@@ -16,6 +16,6 @@ It was hosted using Cowrie inside a AWS LightSail instance with a public IP and 
 `12:35:56.000 PM` - First Login
 At 12:35 PM (CDT) A user with an IP originating from Alexandria, Australia (DigitalOcean's Australia Data Center) successfully logged in to the honeypot.
 The credentials used? - `root:Admin2026!`
-{{< figure src="/images/firstlogin.png" alt="Firstlogin" width="50%" >}}
+{{< figure src="/images/firstlogin.png" alt="Firstlogin" width="120%" >}}
 The IP itself had some reports of fraud, but not a ton, indicating it may be a relatively new probe.
-{{< figure src="/images/virusscore.png" alt="Firstlogin" width="50%" >}}
+{{< figure src="/images/ipfraudscore.png" alt="Fraudscore" width="120%" >}}
