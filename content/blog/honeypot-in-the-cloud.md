@@ -43,4 +43,14 @@ Heres a breakdown of what this command does:
 5. Count CPU Cores
 `cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c "^processor" /proc/cpuinfo 2>/dev/null) | head -1)`
 6. Detect CPU Model
-
+`cpu_model=$( (...) | awk 'NF{print; exit}' )`
+7. Detect GPU Hardware
+`gpu_info=$( (lspci | grep -i vga; lspci | grep -i nvidia) | head -n50 )`
+8. Capture cat --help (Honeypot Detection)
+`cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1)`
+9. Capture ls --help (Honeypot Detection)
+`ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1)`
+10. Read Login History
+`last_output=$(last 2>/dev/null | head -n 10)`
+11. Print All Collected Data
+`echo "UNAME:$uname"; echo "ARCH:$arch"; echo "UPTIME:$uptime"; echo "CPUS:$cpus"; echo "CPU_MODEL:$cpu_model"; echo "GPU:$gpu_info"; echo "CAT_HELP:$cat_help"; echo "LS_HELP:$ls_help"; echo "LAST:$last_output"`
