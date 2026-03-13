@@ -1,4 +1,4 @@
-<img width="887" height="572" alt="image" src="https://github.com/user-attachments/assets/49a718bf-d056-48ff-988f-f261900b906e" />---
+---
 title: "$5 Honeypot In The Cloud"
 layout: "single"
 date: 2025-03-10
