@@ -33,7 +33,7 @@ at 10:27:21 AM CDT, we have first contact! The IP origiates from Signapore.
 at 10:28: a successful login from the same IP
 Credentials used: [root/1234567890]
 
-### 10:29 AM - The Assessment Stage
+### 10:29 AM - Malware Assessment Stage
 A common pattern in modern malware dropper bots is a sort of "pre-screening test"
 In this stage, the bot will run several commands with the goal of answering the question:
 
