@@ -71,7 +71,7 @@ Some more interesting data includes:
 - First Submission of This Malware: `2026-03-08 02:34:16 UTC` (This specific malware was only around a week old!)
 - Threat Categories: `miner, trojan, hacktool`
 - DNS Resolutions: `_ipps._tcp.local, api.snapcraft.io, cdn.fwupd.org, endpoint.project0.cc, extensions.gnome.org`
-- IP Traffic: `UDP 224.0.0.251:5353`
+- IP Traffic: `UDP 224.0.0.251:5353` - Possible C2?
 
 ### 10:30 AM - C2 Server Spotted
 After failing to execute the Cryptominer malware, the bot tried again, using an HTTP request instead of SFTP to download the malware,
