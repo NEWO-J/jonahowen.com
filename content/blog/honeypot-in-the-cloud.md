@@ -33,9 +33,12 @@ at 10:27:21 AM CDT, we have first contact! The IP origiates from Signapore.
 at 10:28: a successful login from the same IP
 Credentials used: [root/1234567890]
 
-### 10:29 AM - The "Litmus Test"
+### 10:29 AM - The Pre-Screening
+A common pattern in modern malware dropper bots is a sort of "pre-screening test"
+In this stage, the bot will run several commands with the goal of answering this question:
+*“Is this machine a real, useful target where my malware will successfully run?"*
 
-Heres a breakdown of what this command does:
+Heres a breakdown of what the command does:
 
 1. Reset the PATH variable `export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH`
 2. Collect OS / Kernel Info `uname=$(uname -s -v -n -m 2>/dev/null)`
