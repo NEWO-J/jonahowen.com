@@ -60,7 +60,7 @@ Heres a breakdown of what the command does:
 
 ### 10:30 AM - XMRIG Cryptominer Gets Installed
 My honeypot passed the test! the bot proceeded to the next stage and cryptominer malware was installed on the honeypot.
-
+{{< figure src="/images/dot16.png" alt="dot16" width="120%" >}}
 
 It took several iterations of my honeypot design to ensure it passed these kinds of tests, I used Cowrie in "Proxy" mode with a custom docker instance, this is much more convincing than the default "Shell" mode you will see with most Cowrie honeypots.
 
