@@ -13,6 +13,12 @@ It is surprising how much traffic can hit a honeypot in just 1 hour..
 
 I initially tried to run the honeypot on a Raspberry Pi, using port forwarding to expose the SSH honeypot on my router, but this proved difficult as the router would perform NAT on the source IPs, rendering IP geolocation and fraud analysis useless. Because AWS lightsail doesn't use NAT for incoming requests, I figured it was more practical for this project.
 
+As for the actual honeypot shell environment, I used Cowrie's proxy mode and set up my own Docker instance to increase the level of interactivity.
+
+You can use the code for that here:
+
+[https://github.com/NEWO-J/honeypot-tools](https://github.com/NEWO-J/honeypot-tools/blob/main/benchmark.py)
+
 **Cost breakdown:**
 
 | Component | Approx. Price |
@@ -60,6 +66,12 @@ Here's a breakdown of what the command does:
 9. Capture ls –help (Honeypot Detection) `ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1)`
 10. Read Login History `last_output=$(last 2>/dev/null | head -n 10)`
 11. Print All Collected Data `echo "UNAME:$uname"; echo "ARCH:$arch"; echo "UPTIME:$uptime"; echo "CPUS:$cpus"; echo "CPU_MODEL:$cpu_model"; echo "GPU:$gpu_info"; echo "CAT_HELP:$cat_help"; echo "LS_HELP:$ls_help"; echo "LAST:$last_output"`
+
+I actually built a benchmark script inspired by this bot's detection method, I used it to improve my own honeypot.
+
+See the code here:
+
+[https://github.com/NEWO-J/honeypot-tools](https://github.com/NEWO-J/honeypot-tools/blob/main/benchmark.py)
 
 ### 10:30 AM - XMRIG Cryptominer Gets Installed
 My honeypot passed the test! the bot proceeded to the next stage and cryptominer malware was installed on the honeypot.
