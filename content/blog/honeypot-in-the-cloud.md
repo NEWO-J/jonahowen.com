@@ -22,7 +22,7 @@ I initially tried to run the honeypot on a Raspberry Pi, using port forwarding t
 | AWS Lightsail Ubuntu Instance | $5 | 
 | **Total** | **$5** |
 
-## 10:15 AM - Open for Business
+### 10:15 AM - Open for Business
 At 10:15:25 AM CDT, I started up Cowrie, the honeypot is officially exposed to the world wide web.
 
 ### 8:59 AM - First Contact
