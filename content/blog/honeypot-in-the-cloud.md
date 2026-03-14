@@ -97,6 +97,7 @@ At this point, the honeypot has gotten over 600 requests.
 
 Around 3:07 PM a bot was frantically trying to change the password on my device.
 The bot ran a variety of password reset commands, each pertaining to a different type of device:
+- `flash set DEF_SSH_PASSWD`    ← ZTE ZXHN routers
 - `flash set http_passwd`       ← Huawei HG routers 
 - `nvram set http_passwd`       ← ASUS / DD-WRT routers
 - `setuserpasswd`               ← MikroTik / embedded Linux  
