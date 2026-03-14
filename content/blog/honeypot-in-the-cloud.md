@@ -33,9 +33,10 @@ at 10:27:21 AM CDT, we have first contact! The IP origiates from Signapore.
 at 10:28: a successful login from the same IP
 Credentials used: [root/1234567890]
 
-### 10:29 AM - The Pre-Screening
+### 10:29 AM - The Bot Assesses My Host
 A common pattern in modern malware dropper bots is a sort of "pre-screening test"
-In this stage, the bot will run several commands with the goal of answering this question:
+In this stage, the bot will run several commands with the goal of answering the question:
+
 *“Is this machine a real, useful target where my malware will successfully run?"*
 
 Heres a breakdown of what the command does:
@@ -53,8 +54,11 @@ Heres a breakdown of what the command does:
 11. Print All Collected Data `echo "UNAME:$uname"; echo "ARCH:$arch"; echo "UPTIME:$uptime"; echo "CPUS:$cpus"; echo "CPU_MODEL:$cpu_model"; echo "GPU:$gpu_info"; echo "CAT_HELP:$cat_help"; echo "LS_HELP:$ls_help"; echo "LAST:$last_output"`
 
 ### 10:30 AM - XMRIG Cryptominer Gets Installed
-To my suprise, it only took 15 minutes for cryptominer malware to get installed on the honeypot.
-This means my honeypot passed the "litmus test" shown earlier, and it was deemed a legitimate host.
+My honeypot passed the test! the bot proceeded to the next stage and cryptominer malware was installed on the honeypot.
+
+
+It took several iterations of my honeypot design to ensure it passed these kinds of tests, I used Cowrie in "Proxy" mode with a custom docker instance, this is much more convincing than the default "Shell" mode you will see with most Cowrie honeypots.
+
 
 ### 10:30 AM - C2 Server Spotted
 After failing to execute the Cryptominer malware, the bot tried again, using an HTTP request instead of SFTP to download the malware,
