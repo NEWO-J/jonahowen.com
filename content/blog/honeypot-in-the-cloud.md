@@ -33,8 +33,9 @@ Using IP geolocation, we can see the requests originate from Signapore.
 {{< figure src="/images/15minutesin.png" alt="Signapore" width="120%" >}}
 
 ### 10:28 AM - First Login
-at 10:28: a successful login from the same IP
+at 10:28:42 AM, a successful login from the same IP
 Credentials used: [root/1234567890]
+{{< figure src="/images/firstlogin.png" alt="First login" width="120%" >}}
 
 ### 10:29 AM - Malware Assessment Stage
 A common pattern in modern malware dropper bots is a sort of "pre-screening test"
