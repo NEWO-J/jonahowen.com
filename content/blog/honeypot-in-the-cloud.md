@@ -29,7 +29,7 @@ At 10:15:25 AM CDT, I started up Cowrie, the honeypot is officially exposed to t
 ### 10:27 AM - First Contact
 at 10:27:21 AM CDT, we have first contact! No login attempt yet, this was likley just a port scan / probe. 
 {{< figure src="/images/firstcontact.png" alt="First contact" width="120%" >}}
-Using Geolocation, we can see the IP originates from Signapore.
+Using IP geolocation, we can see the requests originate from Signapore.
 {{< figure src="/images/15minutesin.png" alt="Signapore" width="120%" >}}
 
 ### 10:28 AM - First Login
