@@ -11,9 +11,7 @@ cover:
 {{< figure src="/images/worldmapview.png" alt="Mapview" width="120%" >}}
 It is suprising how much traffic can hit a honeypot in just 1 hour.. 
 
-I've been wanting to get more blue team experience under my belt, so I thought "why not learn with the real deal?" and I set up a honeypot using AWS lightsail connected to Splunk.
 I initially tried to run the honeypot on a Raspberry Pi, using port forwarding to expose the SSH honeypot on my router, but this proved difficult as the router would perform NAT on the source IPs, rendering IP geolocation and fraud analysis useless. Because AWS lightsail doesnt use NAT for incoming requests, I figured it was more practical for this project.
-{{< figure src="/images/cowrie_light.svg" alt="Cowrie graph" width="120%" >}}
 
 **Cost breakdown:**
 
@@ -24,6 +22,9 @@ I initially tried to run the honeypot on a Raspberry Pi, using port forwarding t
 | Docker Ubuntu Instance | FREE |
 | AWS Lightsail Ubuntu Instance | $5 | 
 | **Total** | **$5** |
+
+{{< figure src="/images/cowrie_light.svg" alt="Cowrie graph" width="120%" >}}
+
 
 ### 10:15 AM - Open for Business
 At 10:15:25 AM CDT, I started up Cowrie, the honeypot is officially exposed to the world wide web.
