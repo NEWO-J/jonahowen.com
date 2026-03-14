@@ -83,4 +83,9 @@ After failing to execute the Cryptominer malware, the bot tried again, using an 
 this revealed the IP address of the C2 server hosting the malware.
 {{< figure src="/images/C2.png" alt="C2 Server" width="120%" >}}
 
+According to WHOIS records, this IP range belongs to Netiface LLC, a VPS/Server rental.
+When I visited the link in an isolated environment, there was nothing there.
+This is either because the server either detected I wasn't a bot requesting the file, or it was simply a "burned proxy" that already got rotated out.
+
+
 
