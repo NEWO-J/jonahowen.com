@@ -28,6 +28,8 @@ At 10:15:25 AM CDT, I started up Cowrie, the honeypot is officially exposed to t
 
 ### 10:27 AM - First Contact
 at 10:27:21 AM CDT, we have first contact! The IP origiates from Signapore. 
+{{< figure src="/images/firstcontact.png" alt="First contact width="120%" >
+{{< figure src="/images/15minutesin.png" alt="Signapore" width="120%" >
 
 ### 10:28 AM - First Login
 at 10:28: a successful login from the same IP
