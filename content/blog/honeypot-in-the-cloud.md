@@ -64,7 +64,7 @@ My honeypot passed the test! the bot proceeded to the next stage and cryptominer
 
 It took several iterations of my honeypot design to ensure it passed these kinds of tests, I used Cowrie in "Proxy" mode with a custom docker instance, this is much more convincing than the default "Shell" mode you will see with most Cowrie honeypots.
 
-#### Brief Malware Analysis
+### Brief Malware Analysis
 Searching a hash of this malware on VirusTotal yields the following result:
 {{< figure src="/images/virustotal.png" alt="Virustotal score" width="120%" >}}
 Some more interesting data includes:
@@ -72,6 +72,10 @@ Some more interesting data includes:
 - Threat Categories: `miner, trojan, hacktool`
 - DNS Resolutions: `_ipps._tcp.local, api.snapcraft.io, cdn.fwupd.org, endpoint.project0.cc, extensions.gnome.org`
 - IP Traffic: `UDP 224.0.0.251:5353` - Possible C2?
+
+Using a strings query, I was able to find the monero wallet address where the mined crypto gets sent to.
+{{< figure src="/images/walletkeys.png" alt="Wallet keys" width="120%" >}}
+Feel free to send a tip! (just kidding)
 
 ### 10:30 AM - C2 Server Spotted
 After failing to execute the Cryptominer malware, the bot tried again, using an HTTP request instead of SFTP to download the malware,
