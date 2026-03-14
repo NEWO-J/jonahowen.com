@@ -5,7 +5,7 @@ date: 2025-01-15
 showtoc: true
 description: "A covert keystroke injector hidden inside a fully functional mouse."
 cover:
-  image: "/images/evilmouse.png"
+  image: "/images/evilmouse1.png"
   alt: "Evilmouse"
 ---
 {{< figure src="/images/evilmouse1.png" alt="Evilmouse" width="70%" >}}
