@@ -9,9 +9,9 @@ cover:
   alt: "Honeypot In The Cloud"
 ---
 {{< figure src="/images/worldmapview.png" alt="Mapview" width="120%" >}}
-It is suprising how much traffic can hit a honeypot in just 1 hour.. 
+It is surprising how much traffic can hit a honeypot in just 1 hour.. 
 
-I initially tried to run the honeypot on a Raspberry Pi, using port forwarding to expose the SSH honeypot on my router, but this proved difficult as the router would perform NAT on the source IPs, rendering IP geolocation and fraud analysis useless. Because AWS lightsail doesnt use NAT for incoming requests, I figured it was more practical for this project.
+I initially tried to run the honeypot on a Raspberry Pi, using port forwarding to expose the SSH honeypot on my router, but this proved difficult as the router would perform NAT on the source IPs, rendering IP geolocation and fraud analysis useless. Because AWS lightsail doesn't use NAT for incoming requests, I figured it was more practical for this project.
 
 **Cost breakdown:**
 
@@ -30,10 +30,10 @@ I initially tried to run the honeypot on a Raspberry Pi, using port forwarding t
 At 10:15:25 AM CDT, I started up Cowrie, the honeypot is officially exposed to the world wide web.
 
 ### 10:27 AM - First Contact
-at 10:27:21 AM CDT, we have first contact! No login attempt yet, this was likley just a port scan / probe. 
+at 10:27:21 AM CDT, we have first contact! No login attempt yet, this was likely just a port scan / probe. 
 {{< figure src="/images/firstcontact.png" alt="First contact" width="120%" >}}
-Using IP geolocation, we can see the requests originate from Signapore.
-{{< figure src="/images/15minutesin.png" alt="Signapore" width="120%" >}}
+Using IP geolocation, we can see the requests originate from Singapore.
+{{< figure src="/images/15minutesin.png" alt="Singapore" width="120%" >}}
 
 ### 10:28 AM - First Login
 at 10:28:42 AM, a successful login from the same IP
@@ -42,12 +42,12 @@ Credentials used: [root/1234567890]
 
 ### 10:29 AM - Malware Assessment Stage
 A common pattern in modern malware dropper bots is a sort of "pre-screening test"
-{{< figure src="/images/asessment.png" alt="asessment" width="120%" >}}
+{{< figure src="/images/asessment.png" alt="assessment" width="120%" >}}
 In this stage, the bot will run several commands with the goal of answering the question:
 
 *“Is this machine a real, useful target where my malware will successfully run?"*
 
-Heres a breakdown of what the command does:
+Here's a breakdown of what the command does:
 
 1. Reset the PATH variable `export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH`
 2. Collect OS / Kernel Info `uname=$(uname -s -v -n -m 2>/dev/null)`
@@ -89,5 +89,17 @@ According to WHOIS records, this IP range belongs to Netiface LLC, a VPS/Server 
 When I visited the link in an isolated environment, there was nothing there.
 This is either because the server either detected I wasn't a bot requesting the file, or it was simply a "burned proxy" that already got rotated out.
 
+### 12:00 PM - 600 Requests
+At this point, the honeypot has gotten over 600 requests.
 
+### 3:07 PM - Possible Botnet Recruitment?
+Around 3:07 PM a bot was frantically trying to change the password on my device.
+The bot ran a variety of password reset commands, each pertaining to a different type of device:
+- `nvram set http_passwd`       ← routers
+- `setuserpasswd`               ← embedded devices  
+- `sys password`                ← Cisco/network gear
+- `sed -i /etc/shadow`          ← Linux servers
+The bot appeared to be trying multiple persistence techniques, likely because it did not know what type of device it had compromised.
 
+This behavior is commonly associated with IoT-focused malware families such as variants of Mirai.
+These botnets attempt to maintain access by modifying credentials or configuration depending on the detected platform.
