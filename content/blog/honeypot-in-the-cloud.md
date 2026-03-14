@@ -93,12 +93,15 @@ This is either because the server either detected I wasn't a bot requesting the 
 At this point, the honeypot has gotten over 600 requests.
 
 ### 3:07 PM - Possible Botnet Recruitment?
+{{< figure src="/images/botnet.png" alt="Botnet" width="120%" >}}
+
 Around 3:07 PM a bot was frantically trying to change the password on my device.
 The bot ran a variety of password reset commands, each pertaining to a different type of device:
 - `nvram set http_passwd`       ← routers
 - `setuserpasswd`               ← embedded devices  
 - `sys password`                ← Cisco/network gear
 - `sed -i /etc/shadow`          ← Linux servers
+
 The bot appeared to be trying multiple persistence techniques, likely because it did not know what type of device it had compromised.
 
 This behavior is commonly associated with IoT-focused malware families such as variants of Mirai.
