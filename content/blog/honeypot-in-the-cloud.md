@@ -80,6 +80,6 @@ Feel free to send a tip! (just kidding)
 ### 10:30 AM - C2 Server Spotted
 After failing to execute the Cryptominer malware, the bot tried again, using an HTTP request instead of SFTP to download the malware,
 this revealed the IP address of the C2 server hosting the malware.
+{{< figure src="/images/C2.png" alt="C2 Server" width="120%" >}}
 
-{{< figure src="/images/failedlogin.png" alt="Failed login" width="120%" >}}
 
