@@ -15,9 +15,7 @@ I initially tried to run the honeypot on a Raspberry Pi, using port forwarding t
 
 As for the actual honeypot shell environment, I used Cowrie's proxy mode and set up my own Docker instance to increase the level of interactivity.
 
-You can use the code for that here:
-
-[https://github.com/NEWO-J/honeypot-tools](https://github.com/NEWO-J/honeypot-tools/blob/main/benchmark.py)
+You can use the code for that here: [https://github.com/NEWO-J/honeypot-tools](https://github.com/NEWO-J/honeypot-tools/blob/main/benchmark.py)
 
 **Cost breakdown:**
 
@@ -69,9 +67,7 @@ Here's a breakdown of what the command does:
 
 I actually built a benchmark script inspired by this bot's detection method, I used it to improve my own honeypot.
 
-See the code here:
-
-[https://github.com/NEWO-J/honeypot-tools](https://github.com/NEWO-J/honeypot-tools/blob/main/benchmark.py)
+See the code here: [benchmark.py](https://github.com/NEWO-J/honeypot-tools/blob/main/benchmark.py)
 
 ### 10:30 AM - XMRIG Cryptominer Gets Installed
 My honeypot passed the test! the bot proceeded to the next stage and cryptominer malware was installed on the honeypot.
