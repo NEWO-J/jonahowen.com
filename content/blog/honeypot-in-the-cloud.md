@@ -97,8 +97,9 @@ At this point, the honeypot has gotten over 600 requests.
 
 Around 3:07 PM a bot was frantically trying to change the password on my device.
 The bot ran a variety of password reset commands, each pertaining to a different type of device:
-- `nvram set http_passwd`       ← routers
-- `setuserpasswd`               ← embedded devices  
+- `flash set http_passwd`       ← Huawei HG routers 
+- `nvram set http_passwd`       ← ASUS / DD-WRT routers
+- `setuserpasswd`               ← MikroTik / embedded Linux  
 - `sys password`                ← Cisco/network gear
 - `sed -i /etc/shadow`          ← Linux servers
 
