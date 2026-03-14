@@ -3,13 +3,13 @@ title: "$5 Honeypot In The Cloud"
 layout: "single"
 date: 2025-03-10
 showtoc: true
-description: "Running a Cowrie honeypot hosted in AWS Lightsail with Splunk Connector + Geomap for 24 hours"
+description: "Running a $5 Cowrie honeypot hosted in AWS Lightsail with Splunk Connector + Geomap, and catching a new malware strain"
 cover:
   image: "/images/worldmapview.png"
   alt: "Honeypot In The Cloud"
 ---
 {{< figure src="/images/worldmapview.png" alt="Mapview" width="120%" >}}
-It is suprising how much traffic can hit a honeypot in just 24 hours..
+It is suprising how much traffic can hit a honeypot in just 1 hour.. 
 
 I've been wanting to get more blue team experience under my belt, so I thought "why not learn with the real deal?" and I set up a honeypot using AWS lightsail connected to Splunk.
 I initially tried to run the honeypot on a Raspberry Pi, using port forwarding to expose the SSH honeypot on my router, but this proved difficult as the router would perform NAT on the source IPs, rendering IP geolocation and fraud analysis useless. Because AWS lightsail doesnt use NAT for incoming requests, I figured it was more practical for this project.
