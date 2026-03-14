@@ -19,63 +19,43 @@ I initially tried to run the honeypot on a Raspberry Pi, using port forwarding t
 |---|---|
 | Splunk Enterprise Free Trial | FREE |
 | Cowrie | FREE |
+| Docker Ubuntu Instance | FREE |
 | AWS Lightsail Ubuntu Instance | $5 | 
 | **Total** | **$5** |
 
 ### 10:15 AM - Open for Business
 At 10:15:25 AM CDT, I started up Cowrie, the honeypot is officially exposed to the world wide web.
 
-### 8:59 AM - First Contact
-at 8:59:17.00 AM CDT, we have first contact! The IP origiates from Mountain View, California, USA.
+### 10:27 AM - First Contact
+at 10:27:21 AM CDT, we have first contact! The IP origiates from Signapore. 
 
-{{< figure src="/images/FirstProbe.png" alt="First probe" width="120%" >}}
+### 10:28 AM - First Login
+at 10:28: a successful login from the same IP
+Credentials used: [root/1234567890]
 
-Luckily, this was just Nokia's deepfield internet crawler, so no bad guys yet.
+### 10:29 AM - The "Litmus Test"
 
-{{< figure src="/images/deepfield.png" alt="deepfield" width="120%" >}}
+Heres a breakdown of what this command does:
 
-### 12:31 PM - First Login Attempt (Failure)
+1. Reset the PATH variable `export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH`
+2. Collect OS / Kernel Info `uname=$(uname -s -v -n -m 2>/dev/null)`
+3. Get CPU Architecture `arch=$(uname -m 2>/dev/null)`
+4. Get System Uptime `uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1)`
+5. Count CPU Cores `cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c "^processor" /proc/cpuinfo 2>/dev/null) | head -1)`
+6. Detect CPU Model `cpu_model=$( (...) | awk 'NF{print; exit}' )`
+7. Detect GPU Hardware `gpu_info=$( (lspci | grep -i vga; lspci | grep -i nvidia) | head -n50 )`
+8. Capture cat –help (Honeypot Detection) `cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1)`
+9. Capture ls –help (Honeypot Detection) `ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1)`
+10. Read Login History `last_output=$(last 2>/dev/null | head -n 10)`
+11. Print All Collected Data `echo "UNAME:$uname"; echo "ARCH:$arch"; echo "UPTIME:$uptime"; echo "CPUS:$cpus"; echo "CPU_MODEL:$cpu_model"; echo "GPU:$gpu_info"; echo "CAT_HELP:$cat_help"; echo "LS_HELP:$ls_help"; echo "LAST:$last_output"`
 
-At 12:31:02 PM (CDT) A "user" with an IP `134.199.153.119`originating from Alexandria, Australia (DigitalOcean's Australia Data Center) tried to logged in to the honeypot.
-The credentials used? - `pi:raspberry`. These credentials were rejected by Cowrie.
+### 10:30 AM - XMRIG Cryptominer Gets Installed
+To my suprise, it only took 15 minutes for cryptominer malware to get installed on the honeypot.
+This means my honeypot passed the "litmus test" shown earlier, and it was deemed a legitimate host.
+
+### 10:30 AM - C2 Server Spotted
+After failing to execute the Cryptominer malware, the bot tried again, using an HTTP request instead of SFTP to download the malware,
+this revealed the IP address of the C2 server hosting the malware.
 
 {{< figure src="/images/failedlogin.png" alt="Failed login" width="120%" >}}
 
-Looking at the IP fraud score for this one, its starting to look malicious.
-
-{{< figure src="/images/ipfraudscore.png" alt="Fraud score" width="120%" >}}
- 
-### 12:31 PM - First Successful Login
-
-At 12:31:49 PM (CDT) Just 47 seconds after the first login attempt, the same IP address tried the credentials `root:1qaz2wsx`. Unlike the first attempt, this login was a success.
-
-{{< figure src="/images/firstlogin.png" alt="First login" width="120%" >}}
-
-### 12:31 PM - Recon Begins
-
-Just 1 second after successful login, the bot begins to dig through my host. The command the bot executed was quite long but it tells us a lot.
-{{< figure src="/images/reconbegins.png" alt="Recon begins" width="120%" >}}
-
-Heres a breakdown of what this command does:
-1. Reset the PATH variable
-`export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH`
-2. Collect OS / Kernel Info
-`uname=$(uname -s -v -n -m 2>/dev/null)`
-3. Get CPU Architecture
-`arch=$(uname -m 2>/dev/null)`
-4. Get System Uptime
-`uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1)`
-5. Count CPU Cores
-`cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c "^processor" /proc/cpuinfo 2>/dev/null) | head -1)`
-6. Detect CPU Model
-`cpu_model=$( (...) | awk 'NF{print; exit}' )`
-7. Detect GPU Hardware
-`gpu_info=$( (lspci | grep -i vga; lspci | grep -i nvidia) | head -n50 )`
-8. Capture cat --help (Honeypot Detection)
-`cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1)`
-9. Capture ls --help (Honeypot Detection)
-`ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1)`
-10. Read Login History
-`last_output=$(last 2>/dev/null | head -n 10)`
-11. Print All Collected Data
-`echo "UNAME:$uname"; echo "ARCH:$arch"; echo "UPTIME:$uptime"; echo "CPUS:$cpus"; echo "CPU_MODEL:$cpu_model"; echo "GPU:$gpu_info"; echo "CAT_HELP:$cat_help"; echo "LS_HELP:$ls_help"; echo "LAST:$last_output"`
