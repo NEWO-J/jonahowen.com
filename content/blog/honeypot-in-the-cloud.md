@@ -5,9 +5,10 @@ date: 2025-03-10
 showtoc: true
 description: "Running a Cowrie honeypot hosted in AWS Lightsail with Splunk Connector + Geomap for 24 hours"
 cover:
-  image: "/images/honeymap.png"
+  image: "/images/worldmapview.png"
   alt: "Honeypot In The Cloud"
 ---
+{{< figure src="/images/worldmapview.png" alt="Mapview" width="120%" >}}
 It is suprising how much traffic can hit a honeypot in just 24 hours..
 
 I've been wanting to get more blue team experience under my belt, so I thought "why not learn with the real deal?" and I set up a honeypot using AWS lightsail connected to Splunk.
