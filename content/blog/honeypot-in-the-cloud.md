@@ -39,6 +39,7 @@ Credentials used: [root/1234567890]
 
 ### 10:29 AM - Malware Assessment Stage
 A common pattern in modern malware dropper bots is a sort of "pre-screening test"
+{{< figure src="/images/asessment.png" alt="asessment" width="120%" >}}
 In this stage, the bot will run several commands with the goal of answering the question:
 
 *“Is this machine a real, useful target where my malware will successfully run?"*
