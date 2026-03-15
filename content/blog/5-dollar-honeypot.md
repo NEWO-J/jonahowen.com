@@ -118,7 +118,7 @@ This behavior is commonly associated with IoT-focused malware families such as v
 These botnets attempt to maintain access by modifying credentials or configuration depending on the detected platform.
 
 ### Conclusion
-The traffic continued to ressemble either botnet recruitment or cryptomining attempts, with many repeat IPs appearing for most of the day.
+The traffic continued to ressemble either botnet recruitment or cryptomining attempts.
 
 I choose AWS lightsail for this project because it provides a VPS with a public IP and offers the simplicity of no NAT (Network Address Translation) allowing me to gain insights into the attacker's source IP while offering the additional protection from the Cloud.
 
