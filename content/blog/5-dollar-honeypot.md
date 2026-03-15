@@ -83,7 +83,7 @@ Some more interesting data includes:
 - First Submission of This Malware: `2026-03-08 02:34:16 UTC` (This specific malware was only around a week old!)
 - Threat Categories: `miner, trojan, hacktool`
 - DNS Resolutions: `_ipps._tcp.local, api.snapcraft.io, cdn.fwupd.org, endpoint.project0.cc, extensions.gnome.org`
-- IP Traffic: `UDP 224.0.0.251:5353` - Possible C2?
+- IP Traffic: `UDP 224.0.0.251:5353` 
 
 Using a strings query, I was able to find the monero wallet address where the mined crypto gets sent to.
 {{< figure src="/images/walletkeys.png" alt="Wallet keys" width="120%" >}}
