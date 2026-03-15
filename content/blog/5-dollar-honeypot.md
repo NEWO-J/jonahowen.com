@@ -1,7 +1,7 @@
 ---
 title: "$5 Honeypot In The Cloud"
 layout: "single"
-date: 2025-03-10
+date: 2026-03-14
 showtoc: true
 description: "Running a $5 Cowrie honeypot proxying to a Docker instance; all hosted in AWS Lightsail with Splunk Connector + Geomap — catching a week old malware strain"
 cover:
