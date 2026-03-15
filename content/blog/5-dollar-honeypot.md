@@ -97,7 +97,7 @@ According to WHOIS records, this IP range belongs to Netiface LLC, a VPS/Server 
 When I visited the link in an isolated environment, there was nothing there.
 This is either because the server either detected I wasn't a bot requesting the file, or it was simply a "burned proxy" that already got rotated out.
 
-### 12:00 PM - 600 Requests
+### 12:11 PM - 600 Requests
 At this point, the honeypot has gotten over 600 requests.
 
 ### 3:07 PM - Possible Botnet Recruitment?
@@ -116,3 +116,18 @@ The bot appeared to be trying multiple persistence techniques, likely because it
 
 This behavior is commonly associated with IoT-focused malware families such as variants of Mirai.
 These botnets attempt to maintain access by modifying credentials or configuration depending on the detected platform.
+
+### Conclusion
+The traffic continued to ressemble either botnet recruitment or cryptomining attempts, with many repeat IPs appearing for most of the day.
+
+I choose AWS lightsail for this project because it provides a VPS with a public IP and offers the simplicity of no NAT (Network Address Translation) allowing me to gain insights into the attacker's source IP while offering the additional protection from the Cloud.
+
+I learned a lot from this project, including
+- Deploying honeypots with Cowrie
+- How to set up Splunk with HTTPS Event Collector
+- Threat Intelligence
+- Log correlation and geolocation
+- Fingerprinting malware strains & malware analysis
+
+ If you make it yourself, I always invite you to improve upon my design, add automation, and find new interesting data visualization techniques. 
+
