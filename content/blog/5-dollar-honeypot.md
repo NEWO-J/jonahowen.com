@@ -9,7 +9,7 @@ cover:
   alt: "Honeypot In The Cloud"
 ---
 {{< figure src="/images/worldmapview.png" alt="Mapview" width="120%" >}}
-It is surprising how much traffic can hit a honeypot in just 1 hour.. 
+This weekend I decided to run a honeypot because I wanted some more blue team experience.
 
 I initially tried to run the honeypot on a Raspberry Pi, using port forwarding to expose the SSH honeypot on my router, but this proved difficult as the router would perform NAT on the source IPs, rendering IP geolocation and fraud analysis useless. Because AWS lightsail doesn't use NAT for incoming requests, I figured it was more practical for this project.
 
