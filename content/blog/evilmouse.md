@@ -1,7 +1,7 @@
 ---
 title: "Evilmouse"
 layout: "single"
-date: 2025-01-15
+date: 2026-02-15
 showtoc: true
 description: "A covert keystroke injector hidden inside a fully functional mouse."
 cover:
