@@ -24,7 +24,7 @@ After going through a few options, including consideration of site screen-captur
 
 Gestalt Pattern Matching works by finding the longest common substring between two sequences of data, resulting in a similarity score.
 
-Gestalt is much more sensitive to small changes in data than perceptual hashing because it focuses on semantic content structure rather than perceptual image likeness. Phash will give us a very high similarity score when subtle changes happen in the website, this is not what we want.
+Gestalt is much more sensitive to small changes in data than perceptual hashing because it focuses on semantic content structure rather than perceptual image likeness. Phash will still give us a very high similarity score when subtle changes happen in the website. Phash's primary function is to detect similarities, not differences - this is not what we want.
 
 ### How It Works
 
