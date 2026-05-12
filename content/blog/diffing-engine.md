@@ -8,4 +8,4 @@ cover:
   image: "/images/diffy.png"
   alt: "AirGap-Diffy Thumbnail"
 ---
-{{< figure src="/images/worldmapview.png" alt="Mapview" width="120%" >}}
+{{< figure src="/images/diffy.png" alt="Mapview" width="120%" >}}
