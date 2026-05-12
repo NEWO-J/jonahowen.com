@@ -15,7 +15,7 @@ Us researchers would often be assigned massive scopes of data to audit that is u
 
 Fellow SRT'ers suggested I pick a vulnerability class, and get good at it - I found myself doing well with Access Control / IDOR vulnerabilites and ended up landing my first critical (CVSS 9.1) bug bounty that way.
 
-Now that I had IDOR down, I needed to automate and reduce triage time. 
+Now that I had IDOR down, I needed to automate and reduce the triage time of sifting through these massive amounts of data.
 
 My initial intution was to build a system that would use standard hash-diffing on each page to detect differences, this doesn't work due to the dynamic nature of modern website design, anything from a change in clock on the site, to a CSRF token rotating, would result in a false positive.
 
