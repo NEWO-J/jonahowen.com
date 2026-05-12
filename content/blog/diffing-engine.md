@@ -19,5 +19,16 @@ Now that I had IDOR down, I needed to automate and reduce the triage time of sif
 
 My initial intution was to build a system that would use standard hash-diffing on each page to detect differences, this doesn't work due to the dynamic nature of modern website design, anything from a change in clock on the site, to a CSRF token rotating, would result in a false positive.
 
+### Differential Response Testing
+After going through a few options, including consideration of site screen-captures + perceptual hashing (which I decided took up way too much storage overhead and compute power for little gain). I decided that Gestalt Pattern Matching would be the most optimal algorithim for this.
 
+Gestalt Pattern Matching works by finding the longest common substring between two sequences of data, resulting in a similarity score.
+
+Gestalt is much more sensitive to small changes in data than perceptual hashing because it focuses on semantic content structure rather than perceptual image likeness. Phash will give us a very high similarity score when subtle changes happen in the website, this is not what we want.
+
+### How It Works
+
+### Limitation
+
+### Results
 
